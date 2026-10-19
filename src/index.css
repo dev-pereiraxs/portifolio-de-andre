@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: #09090B; }
+  body { @apply bg-ink font-sans text-white antialiased; }
+  ::selection { background: #8B5CF6; color: #fff; }
+  :focus-visible { outline: 2px solid #A78BFA; outline-offset: 3px; border-radius: 6px; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition duration-200;
+  }
+  .btn-primary { @apply bg-violet text-white hover:bg-violet-light hover:-translate-y-0.5; }
+  .input {
+    @apply w-full rounded-xl border border-ink-line bg-ink/60 py-3.5 pr-4 text-sm text-white placeholder:text-mute/70 transition focus:border-violet disabled:opacity-60;
+  }
+  .btn-ghost { @apply border border-ink-line text-white hover:border-violet hover:text-violet-light; }
+}
+
+/* Entrada dos elementos ao rolar a página */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; transition-delay: var(--d, 0ms); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Sequência de abertura do hero (único momento animado ao carregar) */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0ms); }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 60s linear infinite; transform-origin: center; }
+.spin-slow-rev { animation: spin-slow 90s linear infinite reverse; transform-origin: center; }
+
+.grid-bg {
+  background-image: linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 20%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .reveal, .rise { opacity: 1; transform: none; }
+}
+
+/* Card de foto flutuante */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.float { animation: float 6s ease-in-out infinite; }
+
+.photo-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 15%, transparent 95%);
+  mask-image: radial-gradient(closest-side, #000 15%, transparent 95%);
+}
+
+/* Anel com borda em degradê roxo (só a borda, o interior fica transparente) */
+.ring-gradient {
+  padding: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 45%, rgba(91, 33, 182, .3) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Ilustração do hero: etiquetas flutuando e cursor piscando */
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.bob { animation: bob 4.5s ease-in-out infinite; }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.blink { animation: blink 1s steps(1) infinite; }
