@@ -87,7 +87,19 @@ export type Project = {
   tags?: string[] // só preencha o que puder confirmar
 }
 
+
+
+
 export const projects: Project[] = [
+
+  {
+    title: 'Radical Music',
+    description: 'Loja virtual de instrumentos musicais com cadastro e login, catálogo com busca e filtros, carrinho, pedidos, painel de estoque e pagamento em ambiente de teste.',
+    url: 'https://radical-music.onrender.com',
+    image: './projects/radical-music.webp',
+    tags: ['React', 'Python (Flask)', 'MySQL'],
+  },
+
   {
     title: 'Serviço Fácil',
     description: 'Projeto integrador publicado online, desenvolvido durante a formação.',
