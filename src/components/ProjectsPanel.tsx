@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
-import { projects, moreProjectsUrl, type Project } from '../data/content'
+import { moreProjectsUrl, type Project } from '../data/content'
+import { projects } from '../data/projects'
 
 function Preview({ p }: { p: Project }) {
   const [failed, setFailed] = useState(false)
