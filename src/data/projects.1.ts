@@ -18,7 +18,7 @@ export const projects: Project[] = [
         title: 'Serviço Fácil',
         description: 'Projeto integrador publicado online, desenvolvido durante a formação.',
         url: 'https://projeto-integrador-h7m7.onrender.com/',
-        image: '/projects/projeto-integrador.webp',
+        image: './projects/projeto-integrador.webp',
         tags: ['Python', 'Flask', 'JavaScript', 'CSS'],
     },
 
