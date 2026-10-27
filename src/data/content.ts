@@ -100,13 +100,14 @@ export const projects: Project[] = [
     tags: ['React', 'Python (Flask)', 'MySQL'],
   },
 
-  {
-    title: 'Serviço Fácil',
-    description: 'Projeto integrador publicado online, desenvolvido durante a formação.',
-    url: 'https://projeto-integrador-h7m7.onrender.com/',
-    image: './projects/projeto-integrador.webp',
-  },
-  
+ {
+  title: 'Serviço Fácil',
+  description: 'Projeto integrador publicado online, desenvolvido durante a formação.',
+  url: 'https://projeto-integrador-h7m7.onrender.com/',
+  image: '/projects/projeto-integrador.webp',
+  tags: ['Python', 'Flask', 'JavaScript', 'CSS'],
+},
+
   {
     title: 'Spider',
     description: 'Fã-clube do Homem-Aranha com curiosidades sobre o herói, trailer, filme e os atores que o interpretaram.',
