@@ -104,7 +104,7 @@ export const projects: Project[] = [
     title: 'Serviço Fácil',
     description: 'Projeto integrador publicado online, desenvolvido durante a formação.',
     url: 'https://projeto-integrador-h7m7.onrender.com/',
-    image: './projects/servico-facil.webp',
+    image: './projects/projeto-integrador.webp',
   },
   {
     title: 'Spider',
