@@ -106,6 +106,7 @@ export const projects: Project[] = [
     url: 'https://projeto-integrador-h7m7.onrender.com/',
     image: './projects/projeto-integrador.webp',
   },
+  
   {
     title: 'Spider',
     description: 'Fã-clube do Homem-Aranha com curiosidades sobre o herói, trailer, filme e os atores que o interpretaram.',
